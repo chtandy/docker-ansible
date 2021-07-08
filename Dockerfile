@@ -1,7 +1,6 @@
 ARG BASE_IMAGE
 FROM ${BASE_IMAGE}
 MAINTAINER cht.andy@gmail.com
-ARG ANSIBLE_VERSION
 
 RUN set -eux \
   && echo "######### apt install supervisor ##########" \
@@ -23,6 +22,7 @@ set fileencoding=utf-8 \n\
 set encoding=utf-8" >> /etc/vim/vimrc \
   && rm -rf /var/lib/apt/lists/* && apt-get clean
 
+ARG ANSIBLE_VERSION
 RUN set -eux \
   && echo "######### install ansible ##########" \
   && apt-get update && apt-get install --assume-yes software-properties-common  \
