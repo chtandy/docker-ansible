@@ -1,6 +1,6 @@
 version: '3'
 services:
-  php-apache:
+  ansible:
     image: ${RUN_IMAGE}:${ANSIBLE_VERSION}
     build:
       context: ./
