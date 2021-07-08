@@ -21,4 +21,6 @@ set encoding=utf-8" >> /etc/vim/vimrc \
   && apt-get install --assume-yes ansible \
   && rm -rf /var/lib/apt/lists/* && apt-get clean
 
+WORKDIR /data
+
 ENTRYPOINT ["/usr/bin/supervisord","-c","/etc/supervisor/conf.d/supervisord.conf"]
