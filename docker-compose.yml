@@ -1,0 +1,13 @@
+version: '3'
+services:
+  php-apache:
+    image: ${RUN_IMAGE}:${ANSIBLE_VERSION}
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        BASE_IMAGE: ${BASE_IMAGE}
+        ANSIBLE_VERSION: ${ANSIBLE_VERSION}
+    container_name: ansible
+    hostname: ansible
+    restart: always
