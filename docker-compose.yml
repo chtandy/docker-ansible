@@ -9,7 +9,7 @@ services:
         BASE_IMAGE: ${BASE_IMAGE}
         ANSIBLE_VERSION: ${ANSIBLE_VERSION}
     container_name: ansible
-    hostname: ansible
+    hostname: docker-ansible
     restart: always
     volumes:
       - ./data:/data
